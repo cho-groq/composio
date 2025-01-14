@@ -21,6 +21,12 @@ add necessary tools:
 ./setup.sh
 ```
 Now, Fill in the .env file with your secrets.
+
+```
+COMPOSIO_API_KEY=KEY
+OPENAI_API_KEY=KEY
+```
+
 ### 2. Run the python script
 ```shell
 python python/examples/quickstarters/trend_finder/main.py

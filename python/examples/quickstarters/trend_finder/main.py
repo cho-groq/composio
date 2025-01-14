@@ -1,13 +1,16 @@
-from composio_llamaindex import Action, ComposioToolSet, App
-from llama_index.core.llms import ChatMessage
+import os
+from composio_llamaindex import App, Action, ComposioToolSet
 from llama_index.core.agent import FunctionCallingAgentWorker
+from llama_index.core.llms import ChatMessage
+from llama_index.llms.groq import Groq
 from dotenv import load_dotenv
-from llama_index.llms.openai import OpenAI
 
 load_dotenv()
 
-llm = OpenAI(model="gpt-4o")
+# Initialize LLM
+llm = Groq(model="llama-3.3-70b-versatile", api_key=os.getenv("GROQ_API_KEY"))
 
+# Get Composio tools
 toolset = ComposioToolSet()
 tools = toolset.get_tools(actions=[Action.TWITTER_USER_LOOKUP_BY_USERNAME, Action.TWITTER_BOOKMARKS_BY_USER, Action.SLACK_SENDS_A_MESSAGE_TO_A_SLACK_CHANNEL, Action.TWITTER_RECENT_SEARCH, Action.TAVILY_TAVILY_SEARCH, Action.FIRECRAWL_SCRAPE_EXTRACT_DATA_LLM])
 
@@ -59,6 +62,6 @@ agent = FunctionCallingAgentWorker(
         verbose=True,
     ).as_agent()
     
-id = '@mastmelon82' #your twitter id
+id = '@HoChris44859' #your twitter id
 channel = 'general' #your slack channel
 print(agent.chat(f"What are the latest trends in AI from twitter from my bookmarks, search and linkedin, my id is {id} send it on my slack {channel} channel"))

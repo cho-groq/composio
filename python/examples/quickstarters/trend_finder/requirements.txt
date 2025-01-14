@@ -1,2 +1,3 @@
-composio_llamaindex
 python-dotenv
+composio_llamaindex
+llama-index-llms-groq
