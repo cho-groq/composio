@@ -13,7 +13,6 @@ echo "Installing libraries from requirements.txt..."
 pip install -r requirements.txt
 
 composio add twitter
-composio add slack
 composio add tavily 
 
 # Copy env backup to .env file
