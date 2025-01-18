@@ -93,7 +93,7 @@ Something I ran into was this issue with Python:
 
 https://github.com/slackapi/bolt-python/issues/673
 
-It was most likely caused due to me downloading a new version of python. If you run into it, just run the certificate command by double clicking on it in the folder view and you should be fine.
+If you run into it, just run the certificate command by double clicking on it in the folder view and you should be fine.
 
 **Install from the slack bot marketplace**
 
@@ -102,7 +102,7 @@ Add the bot to your workspace.
 
 **Invite the bot into a channel**
 
-/invite @trend-finder-slak-groq
+/invite @trend-finder-slack-groq
 
 **To remove the bot from a channel**
 
