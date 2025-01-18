@@ -97,7 +97,7 @@ app = App(token=os.getenv("SLACK_BOT_TOKEN"))
 @app.message("trendfinder")
 def message_hello(message, say):
     # say() sends a message to the channel where the event was triggered
-    say("Sure! Give me one second while I search the web...")
+    say("Sure! Give me ne second while I search the web...")
     output_text = composio()
     say(output_text)
 
